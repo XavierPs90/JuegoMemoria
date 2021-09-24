@@ -3,6 +3,9 @@
     --h: calc(40vh / 4);
     --gradient: linear-gradient( hsl(34, 82%, 57%), hsl(34, 82%, 54%));
     --gradientHover: linear-gradient( hsl(34, 82%, 47%), hsl(34, 82%, 44%));
+    --gray: hsl(0, 0%, 88%);
+    --spanish: hsl(194, 60%, 62%);
+    --english: hsl(34, 82%, 57%);
 }
 
 body{
@@ -13,7 +16,7 @@ body{
     background-color: hsl(194, 25%, 52%);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: .8rem;
-    color: hsl(0, 0%, 88%);
+    color: var(--gray);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -22,9 +25,63 @@ body{
     text-align: center;
 }
 
-div div{
+div div {
     display: inline-block;
 }
+
+/* ---------------------------- */
+/* LANGUAGE */
+.cont-language{
+    margin: .4rem;
+}
+
+.english{
+    color: var(--spanish);
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.spanish{
+    color: var(--english);
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.language{
+    position: relative;
+    width: 50px;
+    top: -1.5vw;
+}
+
+.language:before{
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 25px;
+    background-color: var(--spanish);
+    border-radius: 25px;
+}
+
+.language:after{
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: var(--gray);
+    border-radius: 25px;
+    border: 2px solid var(--spanish);
+    box-sizing: border-box;
+}
+
+.language:checked:after{
+    left:25px;
+    border:2px solid var(--english);
+}
+
+.language:checked:before{
+    background-color: var(--english);
+}
+/* ---------------------------- */
 
 h1 {
     margin: 0;
@@ -32,78 +89,81 @@ h1 {
 
 .cont-level{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-evenly;
     margin: .3rem 0rem;
 }
 
 .btn{
+    min-width: 25vw;
     cursor: pointer;
     background: var(--gradient);
-    padding: .4rem;
-    margin: .2rem 10rem;
+    padding: .4rem .2rem;
+    margin: .3rem;
     border-radius: 2rem;
-    border: hsl(0, 0%, 88%) .3rem solid;
+    border: var(--gray) .3rem solid;
     text-align: center;
-    color: hsl(0, 0%, 88%);
+    color: var(--gray);
     font-size: 1rem;
 }
 
-.area-tarjeta, 
-.tarjeta, 
-.cara{
+.card-area, 
+.card, 
+.card-face{
     cursor: pointer;
     width: var(--w);
     min-width: 80px;
     height: var(--h);
 }
 
-.cont-tarjetas{
+.cont-cards{
     margin: 0 1vw;
 }
 
-.tarjeta{
+.card{
     position: relative;
     transition: all 0.5s;
     transform-style: preserve-3d;
     animation: iniciar 2s;
 } 
 
-.cara{
+.card-face{
     position: absolute;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    box-shadow: inset 0 0 0 5px hsl(0, 0%, 88%);
+    box-shadow: inset 0 0 0 5px var(--gray);
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.trasera{
+.back-face{
     background-color: hsl(194, 60%, 62%);
     transform: rotateY(180deg);
 }
 
-.superior{
+.front-face{
     background: var(--gradient);
 }
 
-.superior:hover{
+.front-face:hover{
     background: var(--gradientHover);
 }
 
-.nuevo-juego{
+.btn-mix{
+    min-width: 40vw;
     cursor: pointer;
     background: var(--gradient);
     padding: .6rem;
     margin-top: .2rem;
     border-radius: 2rem;
-    border: hsl(0, 0%, 88%) .3rem solid;
+    border: var(--gray) .3rem solid;
     text-align: center;
-    color: hsl(0, 0%, 88%);
+    color: var(--gray);
     font-size: 1rem;
 }
 
-.nuevo-juego:hover{
+.btn-mix:hover{
     background: var(--gradientHover);
 }
 
@@ -130,6 +190,15 @@ h1 {
         font-size: 1.2rem;
     }
 
+    .cont-language{
+        margin-top: 2vw;
+        margin-left: 80vw;
+    }
+
+    .language{
+        top: -.5vw;
+    }
+
     h1 {
         margin: 1rem;
     }
@@ -139,7 +208,8 @@ h1 {
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        margin: 1rem;
+        margin: .5rem;
+        margin-top: 0;
     }
 
     .btn{
@@ -149,7 +219,8 @@ h1 {
         font-size: 1rem;
     }
 
-    .nuevo-juego{
+    .btn-mix{
+        min-width: 10vw;
         padding: 1rem;
         margin-top: 1rem;
     }

@@ -5,23 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="icon/png" href="img/xapslogo.png">
     <link rel="stylesheet" href="css/style.css">
-    <title>Memoria</title>
+    <title></title>
 </head>
 <body>
-    <div>
-        <h1>Juego de Memoria</h1>
+    <div class="cont-language">
+        <span class="english"></span>
+        <input type="checkbox" class="language">
+        <span class="spanish"></span>
     </div>
     <div>
-        <div class="cont-level">
-            <button class="btn" data-level="12" data-time="800">Fácil</button>
-            <button class="btn" data-level="18" data-time="500">Intermedio</button>
-            <button class="btn" data-level="24" data-time="200">Avanzado</button>
-        </div>
-        <div class="cont-tarjetas" id="tablero"></div>
+        <h1></h1>
     </div>
-    <button class="nuevo-juego">
-        Mezclar tarjetas
-    </button>
+    <div class="cont-level">
+        <button class="btn" data-level="12" data-time="800"></button>
+        <button class="btn" data-level="18" data-time="500"></button>
+        <button class="btn" data-level="24" data-time="200"></button>
+    </div>    
+    <div class="cont-cards" id="panel"></div>
+    <div class="cont-btn-mix">
+        <button class="btn-mix"></button>
+    </div>
     <script src="app.js"></script>
 </body>
 </html>
