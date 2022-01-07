@@ -3,7 +3,7 @@ let selecctions = [];
 let cont = 0;
 let level = 12;
 let lastLevel;
-let gradient = "background: linear-gradient(hsl(34, 82%, 57%), hsl(34, 82%, 54%));"
+let gradient = "background: linear-gradient(hsl(34, 82%, 57%), hsl(34, 82%, 54%));";
 let gradientHover = "background: linear-gradient(hsl(34, 82%, 47%), hsl(34, 82%, 44%));";
 let btn = document.querySelectorAll("button");
 let h1 = document.querySelector("h1");
